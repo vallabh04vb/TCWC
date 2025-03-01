@@ -131,7 +131,7 @@ document.querySelectorAll('.animate').forEach(el => {
 
 // Registration deadline check
 function checkDeadline() {
-    const deadline = new Date('2023-03-30T23:59:59');
+    const deadline = new Date('2025-03-30T23:59:59');
     const now = new Date();
     
     if (now > deadline) {
