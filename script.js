@@ -287,3 +287,43 @@ document.querySelectorAll('.faq-question').forEach(question => {
         icon.classList.toggle('fa-chevron-down');
     });
 });
+
+// Remove scroll animations
+document.addEventListener('DOMContentLoaded', function() {
+    // Disable all animations initially
+    const allSections = document.querySelectorAll('section');
+    allSections.forEach(section => {
+        section.style.opacity = '1';
+        section.style.visibility = 'visible';
+        section.style.animation = 'none';
+    });
+
+    // Remove fade-in classes and observers
+    const fadeElements = document.querySelectorAll('.fade-in');
+    fadeElements.forEach(element => {
+        element.classList.remove('fade-in');
+    });
+
+    // Ensure specific sections are visible
+    const criticalSections = document.querySelectorAll('.about-section, .bcrf-section, .about-content, .about-text, .about-image');
+    criticalSections.forEach(section => {
+        if (section) {
+            section.style.opacity = '1';
+            section.style.visibility = 'visible';
+            section.style.animation = 'none';
+            section.style.transform = 'none';
+        }
+    });
+
+    // Remove the intersection observer
+    if (typeof observer !== 'undefined') {
+        observer.disconnect();
+    }
+});
+
+// Keep the sponsors carousel functionality
+const sponsorsCarousel = document.querySelector('.sponsors-carousel');
+if (sponsorsCarousel) {
+    sponsorsCarousel.style.opacity = '1';
+    sponsorsCarousel.style.visibility = 'visible';
+}
