@@ -15,8 +15,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    animation-duration: 0s !important;
-    transition-duration: 0s !important;
+    
 }
 
 html {
@@ -100,7 +99,6 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    backdrop-filter: blur(10px);
 }
 
 header .container {
@@ -115,35 +113,27 @@ header .container {
     box-shadow: none;
 }
 
-.logo img:hover {
-    transform: none;
-}
-
 .nav-links {
     display: flex;
     align-items: center;
-}
-
-.nav-links li {
-    margin-left: 1.5rem;
+    gap: 2rem;
 }
 
 .nav-links a {
     color: var(--dark-color);
     font-weight: 500;
-    padding: 0.5rem 0;
     position: relative;
 }
 
 .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     width: 0;
     height: 2px;
     background-color: var(--accent-color);
-    transition: var(--transition);
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover::after,
@@ -151,23 +141,10 @@ header .container {
     width: 100%;
 }
 
-.register-btn {
-    background-color: var(--primary-color);
-    color: var(--white-color) !important;
-    padding: 0.5rem 1.5rem !important;
-    border-radius: 30px;
-    transition: var(--transition);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.register-btn:hover {
-    background-color: var(--accent-color);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
 .hamburger {
     display: none;
+    background: none;
+    border: none;
     cursor: pointer;
 }
 
@@ -175,11 +152,52 @@ header .container {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--primary-color);
     margin: 5px 0;
-    transition: var(--transition);
+    background-color: var(--primary-color);
+    transition: 0.3s ease;
 }
 
+/* Mobile Navigation */
+@media screen and (max-width: 992px) {
+    .hamburger {
+        display: block;
+        z-index: 100;
+    }
+    
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        transition: 0.3s ease-in-out;
+    }
+    
+    nav.active {
+        right: 0;
+    }
+    
+    .nav-links {
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
 /* Hero Section */
 .hero {
     padding: 10rem 0 6rem;
@@ -709,27 +727,21 @@ header .container {
 
 /* FAQ Section Styles */
 .faq-section {
-    padding: 5rem 0;
+    padding: 4rem 0;
+    background-color: var(--light-color);
+}
+
+.faq-container {
     max-width: 800px;
-    margin: 0 auto;
-}
-
-.faq-section h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.faq-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    margin: 2rem auto;
 }
 
 .faq-item {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: white;
 }
 
 .faq-question {
@@ -738,37 +750,34 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
-    transition: background-color 0.3s ease;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.faq-question:hover {
-    background-color: #f8f9fa;
-}
-
-.faq-question h4 {
-    margin: 0;
-    font-size: 1.1rem;
-    color: var(--primary-color);
+.faq-question.active {
+    background-color: var(--primary-color);
+    color: white;
 }
 
 .faq-answer {
-    padding: 0 1.5rem;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    transition: max-height 0.3s ease;
+    padding: 0 1.5rem;
 }
 
 .faq-answer.active {
-    padding: 1.5rem;
     max-height: 500px;
-    border-top: 1px solid #eee;
+    padding: 1.5rem;
 }
 
-.faq-answer p {
-    margin: 0;
-    line-height: 1.6;
-    color: #666;
+.faq-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active .faq-icon {
+    transform: rotate(45deg);
 }
 
 @media screen and (max-width: 768px) {
@@ -1412,5 +1421,111 @@ footer {
     
     .patrons-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+
+/* Responsive Section Titles */
+@media screen and (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .sub-section-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+}
+
+/* Responsive Grid Layouts */
+@media screen and (max-width: 1200px) {
+    .board-members {
+        gap: 1.5rem;
+    }
+
+    .member-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .member-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .member-card {
+        margin: 0 auto;
+        max-width: 300px;
+    }
+
+    .sponsors-carousel {
+        gap: 1.5rem;
+    }
+
+    .page-banner h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Responsive Images */
+@media screen and (max-width: 768px) {
+    img {
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .member-card img {
+        aspect-ratio: 1;
+    }
+}
+
+/* Fix for Mobile Scrolling */
+@media screen and (max-width: 768px) {
+    html {
+        scroll-padding-top: 60px;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+.nav-links.active {
+    right: 0;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media screen and (max-width: 992px) {
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        transition: 0.3s ease-in-out;
+    }
+    
+    .nav-links {
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
     }
 }
