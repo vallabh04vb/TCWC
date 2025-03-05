@@ -11,6 +11,10 @@
     --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@600&display=swap');
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +28,7 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Proxima Nova', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--white-color);
