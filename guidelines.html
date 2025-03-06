@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <header>
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <div class="logo">
+            <a href="index.html" class="logo">
                 <img src="./logos/logo.png" alt="TCWC Logo">
+            </a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
           
             <nav>
@@ -21,7 +28,7 @@
                     <li><a href="index.html" >Home</a></li>
                     <li><a href="about-tcwc.html">About TCWC</a></li>
                     <li><a href="guidelines.html" class="active">Guidelines</a></li>
-                    <li><a href="https://bharatcleanrivers.com/">BCRF x TOC</a></li>
+                    <li><a href="https://bharatcleanrivers.com/" target="_blank">BCRF x TOC</a></li>
                     <li><a href="spotlight.html">Spotlight</a></li>
                     
                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfzUYQzGenbvrikNWLLRdE9n7EDdn3TvppN00e6zQhsI6_kOQ/formResponse" class="register-btn" target="_blank">Register Now</a></li>
@@ -40,6 +47,70 @@
     <section class="page-banner">
         <div class="container">
             <h1>Guidelines & FAQ's</h1>
+        </div>
+    </section>
+    <!-- Eligibility & Rules Section -->
+    <section class="eligibility-section">
+        <div class="container">
+            <h2>Eligibility, Rules and Judging Criteria</h2>
+            
+            <div class="eligibility-grid">
+                <div class="eligibility-card">
+                    <div class="card-header">
+                        <i class="fas fa-user-check"></i>
+                        <h3>Entry & Eligibility</h3>
+                    </div>
+                    <ul>
+                        <li><strong>Entry Fee:</strong> INR 0</li>
+                        <li><strong>Eligible Students:</strong> TCWC Partner Schools only</li>
+                        <li>TCWC Champions: Grades 6-8</li>
+                        <li>TCWC Advocates: Grades 9-12</li>
+                    </ul>
+                </div>
+
+                <div class="eligibility-card">
+                    <div class="card-header">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Categories</h3>
+                    </div>
+                    <ul>
+                        <li><strong>Fine Arts:</strong> 2D mixed-media on A3 Art Sheet</li>
+                        <li><strong>Poetry Writing:</strong> 200 Words</li>
+                        <li><strong>Essay Writing:</strong> 600 Words</li>
+                        <li>Students may participate in one, two, or all categories</li>
+                    </ul>
+                </div>
+
+                <div class="eligibility-card">
+                    <div class="card-header">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Important Rules</h3>
+                    </div>
+                    <ul>
+                        <li>One form submission per category</li>
+                        <li>Multiple entries in same category will lead to disqualification</li>
+                        <li>No plagiarism or Generative AI usage allowed</li>
+                        <li>All submissions must be 100% original work</li>
+                    </ul>
+                </div>
+
+                <div class="eligibility-card">
+                    <div class="card-header">
+                        <i class="fas fa-gavel"></i>
+                        <h3>Judging Criteria</h3>
+                    </div>
+                    <ul>
+                        <li>Relevance to Topic</li>
+                        <li>Creativity & Originality</li>
+                        <li>Quality of Skill:
+                            <ul>
+                                <li>Essay/Poetry: Vocabulary & Grammar</li>
+                                <li>Fine Art: Artistic Skill</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -126,13 +197,6 @@
                 </div>
             </div>
             
-            <div class="faq-section">
-                <h2>Frequently Asked Questions</h2>
-                <div class="faq-grid">
-                    <!-- FAQs will be populated by JavaScript -->
-                </div>
-            </div>
-            
             <div class="contact-section">
                 <h2>Still Have Questions?</h2>
                 <p>If you have any questions that aren't answered above, please feel free to contact us.</p>
@@ -147,6 +211,242 @@
                     </div>
                 </div>
                 <a href="register.html" class="cta-button">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            How do I enrol?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            You can enroll by filling out the official registration form and selecting the event(s) you wish to participate in. If you are submitting entries for multiple categories, you must fill out a separate form for each.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            What are the event categories?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Participants can compete in one, two, or all three categories:<br>
+                            - Fine Arts (2D mixed-media, A3 Art Sheet size, no sticking-pasting)<br>
+                            - Poetry Writing (max. 200 words)<br>
+                            - Essay Writing(max. 600 words)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            What will I receive after the programme?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Participants will receive an e-certificate upon successful submission. Winners will receive exciting prizes at the TCWC Award Ceremony in April 2025. Additionally, students will receive recognition on different platforms and potential internship opportunities.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            When is the enrollment deadline?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            The deadline for enrollment and submission is March 30, 2024. Late submissions will not be accepted under any circumstance.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            What do I need to participate?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            You need to be a student in Grades 6-12 from a TCWC Partner School, have an original submission (essay, poem, or fine art), and submit your work in PDF format as per the given guidelines.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            Who is eligible to participate?
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Students in two categories:<br>
+                            - TCWC Champions (Grades 6-8)<br>
+                            - TCWC Advocates (Grades 9-12)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            How do I submit my essay/poetry/artwork?
+                        </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Upload your essay in PDF format through the official application form on www.thecleanwaterchallenge.com before the deadline (30th March, 2025 - 11:59 PM IST). Ensure that your file is correctly named in the format: YourFullName_Essay.pdf.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEight">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            Can I submit multiple entries?
+                        </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            - One entry per event category (Essay, Poetry, Fine Arts) is permitted.<br>
+                            - A participant can submit up to 3 entries i.e. one entry each for Essay, Fine Arts and Poetry.<br>
+                            - Multiple entries in the same category will lead to disqualification.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingNine">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                            Will the entries be checked for plagiarism?
+                        </button>
+                    </h2>
+                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Yes, all entries will be checked for plagiarism and must be 100% original. Plagiarism, AI-generated content, or generic literary entries will be disqualified.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                            Will I receive feedback for my essay?
+                        </button>
+                    </h2>
+                    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Due to the high number of entries, individual feedback will not be provided. However, winners and top entries may receive reward & recognition at TCWC Awards Ceremony.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEleven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                            Who will I be competing against?
+                        </button>
+                    </h2>
+                    <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            You will be competing against students in your respective category: TCWC Champions (Grades 6-8) and TCWC Advocates (Grades 9-12) from TCWC Partner Schools across Mumbai.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwelve">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                            Will I receive a submission/registration confirmation?
+                        </button>
+                    </h2>
+                    <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            No, you will not receive any email confirmation. You will receive a copy of your responses. On successful submission, a message will be displayed on your screen. Please consider that as a submission/registration confirmation.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThirteen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                            Will I be notified if my essay was flagged for plagiarism?
+                        </button>
+                    </h2>
+                    <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            No. Your entry will not proceed towards a shortlist.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFourteen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+                            Can I request an extension?
+                        </button>
+                    </h2>
+                    <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            No, the deadline is fixed. Under no circumstance, will an extension be considered.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFifteen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                            Do titles count towards the word count?
+                        </button>
+                    </h2>
+                    <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingFifteen" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            No. Only the body text will be counted for the word count.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSixteen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+                            What happens after I have submitted my application?
+                        </button>
+                    </h2>
+                    <div id="collapseSixteen" class="accordion-collapse collapse" aria-labelledby="headingSixteen" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            After successful submission of the form, you will see a message on your screen. Within a few weeks, you will receive a Participation Certificate. That does not mean you have not been shortlisted. If you get shortlisted, you will receive an invite to TCWC Award Ceremony.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeventeen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
+                            Can teams participate?
+                        </button>
+                    </h2>
+                    <div id="collapseSeventeen" class="accordion-collapse collapse" aria-labelledby="headingSeventeen" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            No. It is an individual event.
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
