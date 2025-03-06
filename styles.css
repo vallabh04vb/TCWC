@@ -1,4 +1,14 @@
 /* Base Styles */
+/* Remove white overlay on mobile */
+@media screen and (max-width: 768px) {
+    body::before {
+        content: none;
+    }
+    
+    .container {
+        background: transparent;
+    }
+}
 :root {
     --primary-color: #0077b6;
     --secondary-color: #90e0ef;
@@ -95,27 +105,82 @@ ul {
     border-radius: 2px;
 }
 
-/* Header Styles */
+/* Header and Navigation Styles */
 header {
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+    padding: 1rem 0;
 }
 
-header .container {
+.navbar {
+    padding: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 15px;
+}
+
+.logo {
+    position: relative;
+    z-index: 1002;
 }
 
 .logo img {
-    height: 50px;
+    height: 40px;
     box-shadow: none;
+    display: block;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1002;
+    position: relative;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    margin: 5px 0;
+    background-color: var(--white-color);
+    transition: 0.3s ease;
+}
+
+@media screen and (max-width: 992px) {
+    header {
+        padding: 0.5rem 0;
+        background-color: white;
+    }
+    
+    .hamburger {
+        display: block;
+        margin-right: 1rem;
+    }
+    .navbar-expand-lg{
+        background-color: white;
+    }
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        transition: 0.3s ease-in-out;
+        padding-top: 80px;
+      
+    }
+
+    .navbar-collapse.show {
+        right: 0;
+    }
 }
 
 .nav-links {
@@ -128,6 +193,7 @@ header .container {
     color: var(--dark-color);
     font-weight: 500;
     position: relative;
+    background-color: white;
 }
 
 .nav-links a::after {
@@ -146,63 +212,6 @@ header .container {
     width: 100%;
 }
 
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px 0;
-    background-color: var(--primary-color);
-    transition: 0.3s ease;
-}
-
-/* Mobile Navigation */
-@media screen and (max-width: 992px) {
-    .hamburger {
-        display: block;
-        z-index: 100;
-    }
-    
-    nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100vh;
-        background: rgba(255, 255, 255, 0.98);
-        transition: 0.3s ease-in-out;
-    }
-    
-    nav.active {
-        right: 0;
-    }
-    
-    .nav-links {
-        height: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-    }
-    
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-}
 /* Hero Section Styles */
 .hero {
     background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
@@ -1162,11 +1171,6 @@ header .container {
 }
 
 /* Add these styles to your existing CSS */
-.navbar {
-    padding: 0;
-    width: 100%;
-}
-
 .navbar-nav {
     align-items: center;
     gap: 2rem;
@@ -1210,21 +1214,19 @@ header .container {
         right: -100%;
         width: 100%;
         height: 100vh;
-        background: rgba(255, 255, 255, 0.98);
+        background: transparent;
+        backdrop-filter: none;
         transition: 0.3s ease-in-out;
         padding: 1rem;
+        z-index: 1000;
     }
 
-    .navbar-collapse.show {
-        right: 0;
+    nav {
+        background: transparent;
     }
 
-    .navbar-nav {
-        height: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
+    .container {
+        background: transparent;
     }
 }
 
@@ -1333,3 +1335,52 @@ header .container {
         gap: 1rem;
     }
 }
+
+/* Mobile Navigation Styles */
+@media screen and (max-width: 768px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: transparent;
+        backdrop-filter: none;
+        transition: 0.3s ease-in-out;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    .navbar-collapse.show {
+        right: 0;
+    }
+
+    /* Prevent background content from scrolling when menu is open */
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+/* Remove white overlay from body */
+body::before {
+    content: none !important;
+}
+
+/* Ensure header is transparent on mobile */
+@media screen and (max-width: 768px) {
+    header {
+        background: transparent;
+    }
+
+    .nav-links {
+        background: transparent;
+    }
+
+    /* Remove any other potential white backgrounds */
+    .navbar, 
+    .navbar-collapse.show,
+    .nav {
+        background: transparent !important;
+    }
+}
+

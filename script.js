@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Navigation
     const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('.nav-links'); // Changed to select .nav-links instead of nav
+    const nav = document.querySelector('.nav-links'); // Changed to select .nav-links instead o
+    document.querySelector('.hamburger').addEventListener('click', function() {
+        document.body.classList.toggle('menu-open');
+    });
     const navLinks = document.querySelectorAll('.nav-links a');
 
     if (hamburger && nav) {
