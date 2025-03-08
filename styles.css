@@ -81,7 +81,7 @@ ul {
 }
 
 .section-title {
-    color: var(--primary-color);
+    color: white;
     font-size: 2.5rem;
     text-align: center;
     margin: 3rem 0;
@@ -163,6 +163,7 @@ header {
     .hamburger {
         display: block;
         margin-right: 1rem;
+        color: black;
     }
     .navbar-expand-lg{
         background-color: white;
@@ -763,71 +764,89 @@ header {
     background-color: var(--accent-color);
 }
 
+.eligibility-section {
+    padding: 6rem 0;
+    background-color: var(--white-color);
+}
+
+.eligibility-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.eligibility-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
 .eligibility-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .eligibility-card {
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: var(--box-shadow);
+    background: var(--white-color);
+    border-radius: 15px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    text-align: left;
 }
 
-.card-header {
+.eligibility-card h3 {
     display: flex;
     align-items: center;
     gap: 1rem;
+    color: var(--primary-color);
+    font-size: 1.4rem;
     margin-bottom: 1.5rem;
 }
 
-.card-header i {
-    font-size: 1.5rem;
-    color: var(--primary-color);
+.eligibility-card h3 i {
+    font-size: 1.8rem;
+    color: var(--accent-color);
 }
 
 .eligibility-card ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .eligibility-card li {
     margin-bottom: 1rem;
-    padding-left: 1.5rem;
-    position: relative;
+    font-size: 1.1rem;
+    color: var(--text-color);
     line-height: 1.6;
 }
 
 /* Responsive Adjustments */
-@media screen and (max-width: 768px) {
-    .guidelines-section {
-        padding: 3rem 1rem;
-    }
-
-    .guidelines-section h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .eligibility-card {
-        padding: 1.5rem;
-    }
-
-    .card-header {
-        gap: 0.75rem;
+@media screen and (max-width: 1200px) {
+    .eligibility-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
 }
 
-@media screen and (max-width: 480px) {
-    .guidelines-section h2 {
-        font-size: 1.8rem;
+@media screen and (max-width: 768px) {
+    .eligibility-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
     }
-
-    .eligibility-card {
-        padding: 1.25rem;
+    
+    .eligibility-section h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
     }
 }
 
@@ -2021,3 +2040,94 @@ footer {
     }
 }
 
+.eligibility-section {
+    padding: 6rem 0;
+    background-color: var(--white-color);
+}
+
+.eligibility-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.eligibility-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.eligibility-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.eligibility-card {
+    background: var(--white-color);
+    border-radius: 15px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.eligibility-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.eligibility-card h3 i {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+
+.eligibility-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.eligibility-card li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+    .eligibility-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .eligibility-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+    
+    .eligibility-section h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nav-links {
+        background: white;
+       
+    }
+}
