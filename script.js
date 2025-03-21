@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             question: "When is the enrollment deadline?",
-            answer: "The deadline for enrollment and submission is March 30, 2024. Late submissions will not be accepted under any circumstance."
+            answer: "The deadline for enrollment and submission is April 10, 2024. Late submissions will not be accepted under any circumstance."
         },
         {
             question: "What do I need to participate?",
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             question: "How do I submit my essay/poetry/artwork?",
-            answer: "Upload your essay in PDF format through the official application form on www.thecleanwaterchallenge.com before the deadline (30th March, 2025 - 11:59 PM IST). Ensure that your file is correctly named in the format: YourFullName_Essay.pdf."
+            answer: "Upload your essay in PDF format through the official application form on www.thecleanwaterchallenge.com before the deadline (10th April, 2025 - 11:59 PM IST). Ensure that your file is correctly named in the format: YourFullName_Essay.pdf."
         },
         {
             question: "Can I submit multiple entries?",
@@ -172,7 +172,7 @@ function autoScroll() {
 }
 
 // Auto scroll sponsors every 3 seconds
-setInterval(autoScroll, 3000);
+setInterval(autoScroll, 1000);
 
 // Scroll Animations
 const observerOptions = {
@@ -211,7 +211,7 @@ document.querySelectorAll('.animate').forEach(el => {
 
 // Registration deadline check
 function checkDeadline() {
-    const deadline = new Date('2025-03-30T23:59:59');
+    const deadline = new Date('2025-03-10T23:59:59');
     const now = new Date();
     
     if (now > deadline) {

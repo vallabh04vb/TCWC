@@ -15,7 +15,7 @@
     --accent-color: #00b4d8;
     --light-color: #caf0f8;
     --white-color: #ffffff;
-    --dark-color: #03045e;
+    --dark-color: #01045e;
     --text-color: #333333;
     --transition: all 0.3s ease;
     --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -280,7 +280,7 @@ header {
     background: var(--white-color);
     color: var(--primary-color);
     padding: 1rem 2rem;
-    border-radius: 30px;
+    border-radius: 10px;
     font-weight: 600;
     font-size: 1.1rem;
     transition: all 0.3s ease;
@@ -443,7 +443,7 @@ header {
 
 .impact-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.1);
 }
 
 .impact-icon {
@@ -465,7 +465,7 @@ header {
 
 .categories-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 2rem;
 }
 
@@ -481,7 +481,7 @@ header {
 
 .category-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.1);
 }
 
 .category-card img {
@@ -618,7 +618,7 @@ header {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 2rem;
 }
 
@@ -632,7 +632,7 @@ header {
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.1);
 }
 
 .project-image img {
@@ -1386,7 +1386,7 @@ header {
     background: #0077b6;
     color: white;
     padding: 1rem 2.5rem;
-    border-radius: 30px;
+    border-radius: 10px;
     font-weight: 600;
     font-size: 1.1rem;
     text-transform: uppercase;
